@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StickerVerse - Custom Stickers from Your Favorite Worlds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        nav h1 { margin: 0; font-size: 2em; }
+        nav ul { list-style: none; display: flex; margin: 0; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; transition: color 0.3s; }
+        nav ul li a:hover { color: #ffd700; }
+        .hero {
+            background: url('https://via.placeholder.com/1200x600?text=Sticker+Universe') no-repeat center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        .hero h2 { font-size: 3em; margin-bottom: 20px; }
+        .hero p { font-size: 1.5em; margin-bottom: 30px; }
+        .btn { background: #ffd700; color: #333; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .btn:hover { background: #ffed4e; }
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .about, .how-it-works, .gallery, .create { background: white; border-radius: 10px; margin-bottom: 40px; padding: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .about h2, .how-it-works h2, .gallery h2, .create h2 { color: #667eea; text-align: center; }
+        .steps { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .step { text-align: center; width: 30%; margin-bottom: 20px; }
+        .step i { font-size: 3em; color: #764ba2; margin-bottom: 10px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .sticker { background: #f4f4f4; padding: 20px; border-radius: 10px; text-align: center; transition: transform 0.3s; }
+        .sticker:hover { transform: scale(1.05); }
+        .sticker img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+        form { display: flex; flex-direction: column; }
+        label { margin-top: 15px; font-weight: bold; }
+        input, textarea, select { padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+        .payment-options { margin-top: 20px; }
+        .option { margin-bottom: 10px; }
+        button { margin-top: 20px; padding: 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; transition: background 0.3s; }
+        button:hover { background: #218838; }
+        #preview { margin-top: 20px; padding: 20px; background: #e9ecef; border-radius: 5px; display: none; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; }
+        footer a { color: #ffd700; text-decoration: none; }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            nav ul { margin-top: 10px; }
+            .hero h2 { font-size: 2em; }
+            .steps { flex-direction: column; }
+            .step { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>StickerVerse</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#create">Create</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h2>Bring Your Favorite Worlds to Life</h2>
+            <p>Custom stickers from series, shows, and scenes you love. Digital or physical – your choice!</p>
+            <a href="#create" class="btn">Start Creating</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About StickerVerse</h2>
+        <p>At StickerVerse, we turn your fandom into wearable art. Whether it's a iconic scene from your favorite show or a beloved character from a series, we create personalized stickers that capture the essence. Our AI-powered design ensures every sticker is unique and perfect for you.</p>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fas fa-pencil-alt"></i>
+                <h3>Describe</h3>
+                <p>Tell us about your favorite series, show, or scene.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-magic"></i>
+                <h3>Design</h3>
+                <p>Our tools generate a custom sticker based on your input.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Choose & Pay</h3>
+                <p>Select digital download or physical delivery, then pay securely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Sticker Gallery</h2>
+        <div class="gallery-grid">
+            <div class="sticker">
+                <img src="https://via.placeholder.com/250x200?text=Star+Wars+Sticker" alt="Star Wars Sticker">
+                <p>Star Wars Battle Scene</p>
+            </div>
+            <div class="sticker">
+                <img src="https://via.placeholder.com/250x200?text=Marvel+Sticker" alt="Marvel Sticker">
+                <p>Marvel Hero Pose</p>
+            </div>
+            <div class="sticker">
+                <img src="https://via.placeholder.com/250x200?text=Anime+Sticker" alt="Anime Sticker">
+                <p>Anime Character Moment</p>
+            </div>
+            <div class="sticker">
+                <img src="https://via.placeholder.com/250x200?text=TV+Show+Sticker" alt="TV Show Sticker">
+                <p>Classic TV Scene</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="create" class="create">
+        <h2>Create Your Sticker</h2>
+        <form id="stickerForm">
+            <label for="series">Series/Show Name:</label>
+            <input type="text" id="series" required>
+
+            <label for="scene">Describe the Scene or Character:</label>
+            <textarea id="scene" rows="4" placeholder="E.g., The epic battle in Star Wars Episode IV" required></textarea>
+
+            <label for="style">Sticker Style:</label>
+            <select id="style">
+                <option value="cartoon">Cartoon</option>
+                <option value="realistic">Realistic</option>
+                <option value="minimalist">Minimalist</option>
+            </select>
+
+            <div class="payment-options">
+                <h3>Choose Your Plan</h3>
+                <div class="option">
+                    <input type="radio" id="digital" name="plan" value="digital" required>
+                    <label for="digital">Digital PNG Download - $2.99 per sticker</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="physical" name="plan" value="physical" required>
+                    <label for="physical">Physical Sticker Delivery - $3.99 per sticker (includes shipping)</label>
+                </div>
+            </div>
+
+            <button type="submit">Generate Sticker & Proceed to Payment</button>
+        </form>
+        <div id="preview">
+            <h3>Sticker Preview</h3>
+            <p id="previewText"></p>
+            <p>Style: <span id="previewStyle"></span></p>
+            <p>Plan: <span id="previewPlan"></span> - Price: $<span id="previewPrice"></span></p>
+            <button id="confirmPayment">Confirm Payment</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 StickerVerse. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('stickerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const series = document.getElementById('series').value;
+            const scene = document.getElementById('scene').value;
+            const style = document.getElementById('style').value;
+            const plan = document.querySelector('input[name="plan"]:checked').value;
+            const price = plan === 'digital' ? 2.99 : 3.99;
+
+            document.getElementById('previewText').textContent = `Series: ${series} - Scene: ${scene}`;
+            document.getElementById('previewStyle').textContent = style;
+            document.getElementById('previewPlan').textContent = plan === 'digital' ? 'Digital PNG' : 'Physical Delivery';
+            document.getElementById('previewPrice').textContent = price;
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('preview').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('confirmPayment').addEventListener('click', function() {
+            alert('Payment processed! (Mock - integrate with real payment gateway like Stripe)');
+            // In a real app, redirect to payment or download.
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
